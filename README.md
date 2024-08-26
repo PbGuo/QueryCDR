@@ -4,7 +4,7 @@ This is the official PyTorch implementation of the paper [QueryCDR: Query-based 
 ## Contents
 - [Overview](#overview)
 - [Contribution](#contribution)
-- [Requirements](#requirements_and_dependencies)
+- [Requirements](#requirements)
 - [Dataset](#dataset)
 - [Test](#test)
 - [Train](#train)
@@ -21,8 +21,22 @@ This is the official PyTorch implementation of the paper [QueryCDR: Query-based 
 
 ## Requirements
 - Linux
-- Python 3.8
+- Python 3.9.13
 - Pytorch 1.13
+
+```
+einops==0.8.0
+matplotlib==3.6.2
+numpy==1.23.4
+opencv_python==4.7.0.72
+Pillow==10.4.0
+scipy==1.9.1
+tensorboardX==2.6.2.2
+timm==0.9.7
+torch==1.13.0+cu116
+torchvision==0.14.0+cu116
+tqdm==4.64.1
+```
 
 ## Dataset
 #### Pre-training Dataset
@@ -72,12 +86,6 @@ or
 --dataset_fine/gt/test
 ```
 
-## Test
-2. Prepare testing dataset and modify "input_dir", "target_dir", and "weights" in `./test_RealBlur.py`
-3. Run test
-```
-python test_ctrl.py -c configs/querycdr_pre.json
-```
 ## Train
 #### Pre-training
 
@@ -104,6 +112,7 @@ python dataset_pre/flist.py
 4. Run pre-training
 
 ```
+cd FISH-Net/
 python train_ctrl_pre.py -c configs/querycdr_pre.json
 ```
 #### Fine-tuning
@@ -131,8 +140,31 @@ python dataset_fine/flist.py
 4. Run fine-tuning
 
 ```
+cd FISH-Net/
 python train_ctrl.py -c configs/querycdr.json -l querycdr_pre/ --loadnum x --finetune
 #loadnum is the number of the pre-training weight, such as 00030, 00060 etc...
+```
+
+## Test
+
+1. Before testing, make sure that the fisheye images and corresponding GT with various distortions have been placed in
+
+```
+--dataset_fine/data/test
+--dataset_fine/gt/test
+```
+
+2. After that, generate your test image lists
+
+```
+python dataset_fine/flist.py
+```
+
+3. Run test
+
+```
+cd FISH-Net/
+python test_ctrl.py -c configs/querycdr.json
 ```
 
 ## Citation
