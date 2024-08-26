@@ -49,7 +49,7 @@ For pre-training the network,  you need to download the perspective dataset [Pla
 run
 ```
 python data_prepare/get_dataset_pre.py
-# Specify whether the dataset is a training or test set by mode= 'train' or mode= 'test'
+# Specify whether the dataset is a train or test set by mode= 'train' or mode= 'test'
 ```
 to generate your fisheye dataset. The generated fisheye images and new GT will be placed in 
 
@@ -73,7 +73,7 @@ run
 
 ```
 python data_prepare/get_dataset_fine.py
-# Specify whether the dataset is a training or test set by mode= 'train' or mode= 'test'
+# Specify whether the dataset is a train or test set by mode= 'train' or mode= 'test'
 ```
 
 to generate your fisheye dataset. The generated fisheye images and new GT with various distortions will be placed in 
