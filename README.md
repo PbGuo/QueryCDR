@@ -1,5 +1,5 @@
 # [ECCV 2024] QueryCDR
-This is the official PyTorch implementation of the paper [QueryCDR: Query-based Controllable Distortion Rectification Network for Fisheye Images](https://).
+This is the official PyTorch implementation of the paper [QueryCDR: Query-based Controllable Distortion Rectification Network for Fisheye Images](https://www.ecva.net/papers/eccv_2024/papers_ECCV/papers/02355.pdf).
 
 ## Contents
 - [Overview](#overview)
