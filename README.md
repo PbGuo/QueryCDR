@@ -172,10 +172,10 @@ python test_ctrl.py -c configs/querycdr.json
 If you find the code and pre-trained models useful for your research, please consider citing our paper. :blush:
 ```
 @inproceedings{guo2024querycdr,
-  title={QueryCDR: Query-Based Controllable Distortion Rectification Network for Fisheye Images},
+  title={QueryCDR: Query-based Controllable Distortion Rectification Network for Fisheye Images},
   author={Guo, Pengbo and Liu, Chengxu and Hou, Xingsong and Qian, Xueming},
   booktitle={European Conference on Computer Vision},
-  pages={266–-284},
+  pages={266--284},
   year={2024},
   organization={Springer}
 }
